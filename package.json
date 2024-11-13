@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-to-socials",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Share images to social networks",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",

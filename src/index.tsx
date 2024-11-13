@@ -20,7 +20,7 @@ const ImageToSocials = NativeModules.ImageToSocials
 export function shareToInstagram(
   appId: string,
   backgroundImageUri: string,
-  stickerImageUri: string
+  stickerImageUri?: string
 ): Promise<void> {
   return ImageToSocials.shareToInstagram(
     appId,
