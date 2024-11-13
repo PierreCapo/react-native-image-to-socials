@@ -17,6 +17,14 @@ const ImageToSocials = NativeModules.ImageToSocials
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ImageToSocials.multiply(a, b);
+export function shareToInstagram(
+  appId: string,
+  backgroundImageUri: string,
+  stickerImageUri: string
+): Promise<void> {
+  return ImageToSocials.shareToInstagram(
+    appId,
+    backgroundImageUri,
+    stickerImageUri
+  );
 }
