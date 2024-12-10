@@ -5,7 +5,10 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-import { shareToInstagram } from 'react-native-image-to-socials';
+import {
+  shareToInstagramStory,
+  shareToInstagram,
+} from 'react-native-image-to-socials';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { useState } from 'react';
 
@@ -86,9 +89,9 @@ export default function App() {
       <TouchableOpacity
         onPress={async () => {
           if (uri2 == null) {
-            shareToInstagram(appId, uri1);
+            shareToInstagramStory(appId, uri1);
           } else {
-            shareToInstagram(appId, uri1, uri2);
+            shareToInstagramStory(appId, uri1, uri2);
           }
         }}
         style={{
@@ -98,7 +101,20 @@ export default function App() {
           borderRadius: 12,
         }}
       >
-        <Text>Share to Insta</Text>
+        <Text>Share to Story</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={async () => {
+          shareToInstagram(uri1);
+        }}
+        style={{
+          backgroundColor: 'green',
+          height: 80,
+          width: 80,
+          borderRadius: 12,
+        }}
+      >
+        <Text>Share to Instagram</Text>
       </TouchableOpacity>
     </View>
   );

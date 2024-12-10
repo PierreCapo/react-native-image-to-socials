@@ -17,14 +17,18 @@ const ImageToSocials = NativeModules.ImageToSocials
       }
     );
 
-export function shareToInstagram(
+export function shareToInstagramStory(
   appId: string,
   backgroundImageUri: string,
   stickerImageUri?: string
 ): Promise<void> {
-  return ImageToSocials.shareToInstagram(
+  return ImageToSocials.shareToInstagramStory(
     appId,
     backgroundImageUri,
     stickerImageUri
   );
+}
+
+export function shareToInstagram(imageUri: string): Promise<void> {
+  return ImageToSocials.shareToInstagram(imageUri);
 }
