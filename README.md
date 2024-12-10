@@ -34,6 +34,7 @@ It is used because the function `shareToInstagram` needs to save the image in th
 import { shareToInstagram } from 'react-native-image-to-socials';
 
 // This opens directly instagram and prompt to use it either as a
+// imageUri is local. Check example/App.tsx as an example.
 await shareToInstagram(imageUri);
 ```
 <img src="./docs/shareToInstagram.jpeg" alt="drawing" style="width:200px;"/>
@@ -49,6 +50,9 @@ import { shareToInstagramStory } from 'react-native-image-to-socials';
 // your appId found in Meta. This opens directly a story post
 await shareToInstagramStory(appId, imageUri);
 ```
+
+<img src="./docs/shareToInstagramStory.jpeg" alt="drawing" style="width:200px;"/>
+
 
 ## Contributing
 
