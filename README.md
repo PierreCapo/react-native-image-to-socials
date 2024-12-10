@@ -10,18 +10,20 @@ npm install react-native-image-to-socials
 
 ### iOS
 1) In your Info.plist ensures that Instagram is authorized
-```
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>instagram</string>
+```XML
+<key>LSApplicationQueriesSchemes</key>
+  <array>
+    <string>instagram</string>
     <string>instagram-stories</string>
   </array>
 ```
+
 2) In your Info.plist ensures that NSPhotoLibraryUsageDescription is set up.
 It is used because the function `shareToInstagram` needs to save the image in the Photo Library before being able to forward it to Instagram.
-```
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Toto request</string>
+
+```XML
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Toto request</string>
 ```
 
 ## Usage
@@ -34,8 +36,7 @@ import { shareToInstagram } from 'react-native-image-to-socials';
 // This opens directly instagram and prompt to use it either as a
 await shareToInstagram(imageUri);
 ```
-
-![image](./docs/shareToInstagram.jpeg)
+<img src="./docs/shareToInstagram.jpeg" alt="drawing" style="width:200px;"/>
 
 ### shareToInstagramStory(appId: string, imageUri: string, backgroundImageUri?: string)
 
