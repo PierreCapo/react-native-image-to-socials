@@ -1,6 +1,9 @@
 # react-native-image-to-socials
 
-Share images to social networks
+WIP
+Share images to social networks.
+New architecture only.
+Works on iOS only. Support for Android incoming.
 
 ## Installation
 
@@ -23,7 +26,7 @@ It is used because the function `shareToInstagram` needs to save the image in th
 
 ```XML
 <key>NSPhotoLibraryUsageDescription</key>
-<string>Toto request</string>
+<string>Description string</string>
 ```
 
 ## Usage

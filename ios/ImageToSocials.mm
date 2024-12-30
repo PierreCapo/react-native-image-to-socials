@@ -4,12 +4,9 @@
 @implementation ImageToSocials
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(shareToInstagramStory:(NSString *)appId
-                  backgroundImageUri:(NSString *)backgroundImageUri
-                  stickerImageUri:(nullable NSString *)stickerImageUri
-                  resolve:(RCTPromiseResolveBlock)resolve
-                  reject:(RCTPromiseRejectBlock)reject)
-{
+- (void)shareToInstagramStory:(NSString *)appId backgroundImageUri:(NSString *)backgroundImageUri stickerImageUri:(nullable NSString *)stickerImageUri
+                      resolve:(RCTPromiseResolveBlock)resolve
+                       reject:(RCTPromiseRejectBlock)reject {
   UIImage *backgroundUIImage = [UIImage imageWithContentsOfFile:backgroundImageUri];
   NSData *backgroundImage = UIImagePNGRepresentation(backgroundUIImage);
   
@@ -44,10 +41,8 @@ RCT_EXPORT_METHOD(shareToInstagramStory:(NSString *)appId
   }
 }
 
-RCT_EXPORT_METHOD(shareToInstagram:(NSString *)imageUri
-                  resolve:(RCTPromiseResolveBlock)resolve
-                  reject:(RCTPromiseRejectBlock)reject)
-{
+- (void)shareToInstagram:(NSString *)imageUri resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject {
   UIImage *image = [UIImage imageWithContentsOfFile:imageUri];
   
   
@@ -81,8 +76,12 @@ RCT_EXPORT_METHOD(shareToInstagram:(NSString *)imageUri
     } else {
       NSLog(@"Authorization not granted.");
     }}];
-  
 }
 
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+(const facebook::react::ObjCTurboModule::InitParams &)params
+{
+  return std::make_shared<facebook::react::NativeImageToSocialsSpecJSI>(params);
+}
 
 @end
