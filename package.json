@@ -64,7 +64,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.0.2",
+    "@commitlint/config-conventional": "^19.5.0",
     "@evilmartians/lefthook": "^1.5.0",
     "@react-native-community/cli": "15.0.1",
     "@react-native/eslint-config": "^0.73.1",
@@ -121,7 +121,7 @@
     },
     "plugins": {
       "@release-it/conventional-changelog": {
-        "preset": "angular"
+        "preset": "conventionalcommits"
       }
     }
   },
